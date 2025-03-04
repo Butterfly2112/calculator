@@ -1,107 +1,68 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
-    let x = '';
-    let y = '';
-    let operation = '';
-    let finish = false;
+    let expression = ''; // Зберігаємо весь введений вираз
+    const out = document.querySelector('.result p');
 
     const digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
     const action = ['-', '+', '×', '÷', 'x!', 'xy', '√x', 'π', '%', '(', ')'];
-    const out = document.querySelector('.result p');
 
     function clear() {
-        x = '';
-        y = '';
-        operation = '';
-        finish = false;
-        out.textContent = 0;
+        expression = '';
+        out.textContent = '0';
     }
 
     function factorial(n) {
+        if (n < 0 || !Number.isInteger(n)) return "Error";
         return n < 2 ? 1 : n * factorial(n - 1);
     }
 
     document.querySelector('.btn.C').onclick = clear;
 
     document.querySelector('.btn.⌫').onclick = () => {
-        if (y) {
-            y = y.slice(0, -1);
-            out.textContent = y || x || '0';
-        } else if (operation) {
-            operation = '';
-            out.textContent = x || '0';
-        } else if (x) {
-            x = x.slice(0, -1);
-            out.textContent = x || '0';
-        }
+        expression = expression.slice(0, -1);
+        out.textContent = expression || '0';
     };
 
     document.querySelector('.buttons').onclick = (event) => {
         if (!event.target.classList.contains('btn')) return;
         if (event.target.classList.contains('C')) return;
 
-        const key = event.target.textContent;
+        let key = event.target.textContent;
 
-        if (digit.includes(key)) {
-            if (y === '' && operation === '') {
-                x += key;
-                out.textContent = x;
-            } else if (x !== '' && y !== '' && finish) {
-                y = key;
-                finish = false;
-                out.textContent = y;
-            } else {
-                y += key;
-                out.textContent = y;
+        // Додаємо число або операцію до виразу
+        if (digit.includes(key) || action.includes(key)) {
+            if (key === 'π') key = 'Math.PI';
+            if (key === '×') key = '*';
+            if (key === '÷') key = '/';
+            if (key === '%') key = '/100';
+            if (key === 'xy') key = '**';
+            if (key === '√x') key = 'Math.sqrt';
+
+            // Факторіал (перевіряємо останнє число перед "!")
+            if (key === 'x!') {
+                let match = expression.match(/(\d+(\.\d+)?)$/);
+                if (match) {
+                    let num = parseFloat(match[1]);
+                    expression = expression.replace(/\d+(\.\d+)?$/, factorial(num));
+                    out.textContent = expression;
+                    return;
+                }
             }
+
+            expression += key;
+            out.textContent = expression;
             return;
         }
 
-        if (action.includes(key)) {
-            operation = key;
-            out.textContent = operation;
-            return;
-        }
-
+        // Виконуємо обчислення
         if (key === '=') {
-            switch (operation) {
-                case "+":
-                    x = (+x) + (+y);
-                    break;
-                case "-":
-                    x = x - y;
-                    break;
-                case "×":
-                    x = x * y;
-                    break;
-                case "÷":
-                    x = x / y;
-                    break;
-                case "√x":
-                    x = Math.sqrt(x);
-                    break;
-                case "xy":
-                    x = x ** y;
-                    break;
-                case "x!":
-                    x = factorial(+x);
-                    break;
-                case "π":
-                    x = Math.PI;
-                    break;
-                case "%":
-                    x = (x / 100);
-                    continue;
-                case "(":
-                case ")":
-                    out.textContent = "Не підтримується";
-                    return;
-                default:
-                    out.textContent = 'Error';
-                    return;
+            try {
+                let result = new Function(`return ${expression}`)();
+                out.textContent = result;
+                expression = String(result);
+            } catch {
+                out.textContent = 'Error';
+                expression = '';
             }
-
-            finish = true;
-            out.textContent = x;
         }
     };
 });
