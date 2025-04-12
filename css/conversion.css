@@ -5,8 +5,8 @@
 }
 
 #conversionBtn {
-    background-color: #fc90cd;
-    color: snow;
+    background-color: #ab52ef;
+    color: white;
     padding: 10px;
     font-size: 1rem;
     border-radius: 5px;
@@ -15,7 +15,7 @@
 }
 
 #conversionBtn:hover {
-    filter: brightness(80%);
+    background-color: #9943d3;
 }
 
 .conversion-options {
@@ -25,9 +25,9 @@
     position: absolute;
     top: 50px;
     right: 20px;
-    background-color: #fdb3dd;
+    background-color: #dba0fd;
     padding: 20px;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 .conversion-category {
@@ -35,27 +35,28 @@
 }
 
 .conversion-category h3 {
-    color: #ff009d;
+    color: #6918a6;
 }
 
 .conversion-options select {
     margin: 5px;
     padding: 10px;
     font-size: 1rem;
-    border-radius: 30px;
+    border-radius: 5px;
 }
 
 .conversion-options button {
-    color: snow;
+    color: white;
     border: none;
     padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     margin-top: 10px;
 }
 
 .conversion-options button:hover {
-    filter: brightness(80%);
+    background-color: #a95cdc;
 }
 
 #conversionOptions.show {
