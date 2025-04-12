@@ -1,5 +1,5 @@
 body {
-    background-color: #eeccfc;
+    background-color: #ffd5ed;
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -8,10 +8,10 @@ body {
     margin: 50px auto;
     width: 420px;
     border-radius: 30px;
-    background: #e0b7ff;
-    color: #6918a6;
+    background:  #ffbfe3;
+    color: #ff009d;;
     padding: 20px;
-    box-shadow: 10px 10px 10px #a498ab;
+    box-shadow: 5px 5px 5px #ab98a7;
 }
 
 .name {
@@ -25,7 +25,7 @@ body {
 .result {
     height: 70px;
     padding: 10px;
-    background: #d89cff;
+    background: #ffb3de;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -51,11 +51,11 @@ body {
   
 .memory-text {
     font-size: 1rem;
-    color: rgb(255, 255, 255);
+    color: snow;
     cursor: pointer;
     transition: color 0.2s ease;
 }
   
 .memory-text:hover {
-    color: #6918a6;
+    color: #fc008f;
 }

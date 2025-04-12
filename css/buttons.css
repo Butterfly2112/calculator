@@ -35,7 +35,7 @@
     font-size: 1.3rem;
     cursor: pointer;
     user-select: none;
-    box-shadow: 3px 3px 5px #a28fb0;
+    box-shadow: 3px 3px 5px #b08fa4;
     transition: filter 0.3s ease;
 }
 
@@ -47,7 +47,28 @@
     filter: brightness(60%);
 }
 
-.btn.dark { background: #c256fc; }
-.btn.light { background: #f0caff; }
-.btn.normal { background: #e5b8ff; }
-.btn.medium { background: #d890fc; }
+.bg-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+  
+.bg-buttons button {
+    background-color: #fd7bc5;
+    color: snow;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+  
+.bg-buttons button:hover {
+    filter: brightness(110%);
+}
+
+.btn.dark { background: #ff67bd; color: snow;}
+.btn.light { background: #fccce8; }
+.btn.normal { background: #fcbde1; }
+.btn.medium { background: #fc90cd; }
