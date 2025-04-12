@@ -1,0 +1,53 @@
+.memory-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: transparent;
+}
+
+.memory-bar .btn {
+    width: 60px;
+    height: 45px;
+    font-size: 1rem;
+    line-height: 45px;
+    box-shadow: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.memory-bar .btn:hover {
+    filter: brightness(80%);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 8px;
+    justify-content: center;
+}
+
+.btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 55px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 3px 3px 5px #a28fb0;
+    transition: filter 0.3s ease;
+}
+
+.btn:hover {
+    filter: brightness(80%);
+}
+
+.btn:active {
+    filter: brightness(60%);
+}
+
+.btn.dark { background: #c256fc; }
+.btn.light { background: #f0caff; }
+.btn.normal { background: #e5b8ff; }
+.btn.medium { background: #d890fc; }

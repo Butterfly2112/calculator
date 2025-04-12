@@ -1,48 +1,115 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <link href="style.css" rel="stylesheet" />
-    <script src="main.js"></script>
-    <title>Only for girls(or femboys)</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/conversion.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <title>Calculator</title>
 </head>
 <body>
-    <div class="calc">
-        <div class="name">Калькулятор❤</div>
-        <div class="result">
-             <p>0</p>
-        </div>
-            <div class="buttons">
-            <div class="btn C dark">C</div>
-            <div class="btn ( light">(</div>
-            <div class="btn ) light">)</div>
-            <div class="btn % light">%</div>
-            <div class="btn ⌫ dark">⌫</div>
-
-            <div class="btn √x normal">√x</div>
-            <div class="btn 7 medium">7</div>
-            <div class="btn 8 medium">8</div>
-            <div class="btn 9 medium">9</div>
-            <div class="btn ÷ normal">÷</div>
-
-            <div class="btn x! normal">x!</div>
-            <div class="btn 4 medium">4</div>
-            <div class="btn 5 medium">5</div>
-            <div class="btn 6 medium">6</div>
-            <div class="btn × normal">×</div>
-
-            <div class="btn x normal">x<sup>y</sup></div>
-            <div class="btn 1 medium">1</div>
-            <div class="btn 2 medium">2</div>
-            <div class="btn 3 medium">3</div>
-            <div class="btn - normal">-</div>
-
-            <div class="btn π normal">π</div>
-            <div class="btn 0 medium">0</div>
-            <div class="btn . medium">.</div>
-            <div class="btn = medium">=</div>
-            <div class="btn + normal">+</div>
-        </div>
+  <div class="calc">
+    <div class="name">Calculator ❤</div>
+    
+    <div class="memory-bar">
+      <div class="btn light">MC</div>
+      <div class="btn light">MR</div>
+      <div class="btn light">M+</div>
+      <div class="btn light">M-</div>
     </div>
+    
+    <div class="result">
+        <div class="memory-texts">
+          <span class="memory-text" id="history">History ↻</span>
+        </div>
+        <div class="history-list">
+        </div>
+        <p id="output">0</p>
+      </div>
+    
+    <div class="buttons">
+      <div class="btn dark">C</div>
+      <div class="btn light">BIN</div>
+      <div class="btn light">DEC</div>
+      <div class="btn light">HEX</div>
+      <div class="btn dark">%</div>
+
+      <div class="btn normal">√x</div>
+      <div class="btn medium">7</div>
+      <div class="btn medium">8</div>
+      <div class="btn medium">9</div>
+      <div class="btn normal">÷</div>
+
+      <div class="btn normal">x!</div>
+      <div class="btn medium">4</div>
+      <div class="btn medium">5</div>
+      <div class="btn medium">6</div>
+      <div class="btn normal">×</div>
+
+      <div class="btn normal">x<sup>n</sup></div>
+      <div class="btn medium">1</div>
+      <div class="btn medium">2</div>
+      <div class="btn medium">3</div>
+      <div class="btn normal">-</div>
+
+      <div class="btn normal">+/-</div>
+      <div class="btn medium">0</div>
+      <div class="btn medium">.</div>
+      <div class="btn medium">=</div>
+      <div class="btn normal">+</div>
+    </div>
+  </div>
+
+  <div class="conversion-btn-wrapper">
+    <button id="conversionBtn">Conversions</button>
+  </div>
+
+  <div class="conversion-options" id="conversionOptions">
+    <div class="conversion-category">
+      <h3>Length Conversion</h3>
+      <select>
+        <option>Centimeters</option>
+        <option>Meters</option>
+        <option>Kilometers</option>
+      </select>
+      <select>
+        <option>Centimeters</option>
+        <option>Meters</option>
+        <option>Kilometers</option>
+      </select>
+    </div>
+
+    <div class="conversion-category">
+      <h3>Weight & Mass Conversion</h3>
+      <select>
+        <option>Grams</option>
+        <option>Kilograms</option>
+        <option>Tonnes</option>
+      </select>
+      <select>
+        <option>Grams</option>
+        <option>Kilograms</option>
+        <option>Tonnes</option>
+      </select>
+    </div>
+
+    <div class="conversion-category">
+      <h3>Area Conversion</h3>
+      <select>
+        <option>Square Centimeters</option>
+        <option>Square Meters</option>
+        <option>Square Kilometers</option>
+        <option>Hectares</option>
+      </select>
+      <select>
+        <option>Square Centimeters</option>
+        <option>Square Meters</option>
+        <option>Square Kilometers</option>
+        <option>Hectares</option>
+      </select>
+    </div>
+  </div>
+  
+  <script src="js/conversion.js"></script>
 </body>
 </html>
